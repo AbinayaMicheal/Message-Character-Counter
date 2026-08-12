@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Box</title>
+
+    <!--font awesome CDN link-->
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css">
+
+    <!--Tailwind CSS CDN link-->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css
+" rel="stylesheet">
+
+    <style>
+        .custom-bg {
+            background:
+                radial-gradient(circle at 0% 100%, white 0%, transparent 20%),
+                radial-gradient(circle at 100% 0%, #25C800 0%, transparent 100%);
+        }
+
+        .box-height {
+            height: 80vh;
+            
+        }
+
+        .textbox-height {
+            resize: none;
+            border-color: #25C800;
+            height: 35vh;
+            outline: none;
+    
+        }
+
+        .textbox-height:focus{
+            box-shadow: 0 0 10px rgba(37, 200, 0, 0.35);
+        }
+
+        .custom-btnbg {
+            background-color: #bafeaa;
+            color:#146b00;
+            font-weight: bold;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!--Text Box-->
+    <div class="  min-h-screen flex justify-center items-center custom-bg  lg:mx-80">
+        <!--lg:w-11/12 (it takes 97.6% of the parent width) , md:w-4/5(this takes 80% of the parents width) , w-11/12(this takes 91.6% of parents width in mobile view)-->
+        <div class=" bg-white border rounded-3xl p-4  box-height w-11/12 md:w-4/5 lg:w-11/12">
+            <div class="flex gap-1 items-center pb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                    class="w-12 h-12 text-green-700">
+                    <path fill-rule="evenodd"
+                        d="M4.804 21.644A6.707 6.707 0 0 0 6 21.75a6.721 6.721 0 0 0 3.583-1.029c.774.182 1.584.279 2.417.279 5.322 0 9.75-3.97 9.75-9 0-5.03-4.428-9-9.75-9s-9.75 3.97-9.75 9c0 2.409 1.025 4.587 2.674 6.192.232.226.277.428.254.543a3.73 3.73 0 0 1-.814 1.686.75.75 0 0 0 .44 1.223ZM8.25 10.875a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25ZM10.875 12a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Zm4.875-1.125a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25Z"
+                        clip-rule="evenodd" />
+                </svg>
+                <p class=" font-bold text-3xl">Your Message</p>
+            </div>
+            <p class="text-gray-500  pb-4">Type your message below.<br>You can use up to 200 characters.</p>
+
+            <textarea id="message" class="textbox-height  static-size border-2 rounded-3xl w-full p-5 "
+                placeholder="Write your message here" maxlength="200"></textarea>
+                <p id="warning" class="text-red-800"></p>
+            <div class="mx-2">
+                <p id="count" class="p-2 py-5">0/200 characters</p>
+                <div class=" custom-btnbg p-4   border rounded-2xl flex justify-center items-center gap-2">
+                    <i class="fa-solid fa-star"></i>
+                    <p id="remainingCharacter">200 characters remaining</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--Script-->
+
+    <script src="script.js"></script>
+
+   
+</body>
+
+</html>
